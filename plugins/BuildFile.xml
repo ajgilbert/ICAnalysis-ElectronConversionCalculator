@@ -1,0 +1,6 @@
+<library file="*.cc" name="ICAnalysisElectronConversionCalculatorplugins">
+  <use name="DataFormats/EgammaCandidates"/>
+  <use name="RecoEgamma/EgammaTools"/>
+  <flags EDM_PLUGIN="1"/>
+  <flags CPPDEFINES="$(CMSSW_VERSION)"/>
+</library>
