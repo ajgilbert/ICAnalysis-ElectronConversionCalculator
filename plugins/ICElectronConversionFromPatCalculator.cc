@@ -26,7 +26,8 @@ void ICElectronConversionFromPatCalculator::produce(edm::Event& event,
   std::vector<bool> values(elecs_handle->size(), 0.);
   for (unsigned i = 0; i < elecs_handle->size(); ++i) {
     pat::Electron const& src = elecs_handle->at(i);
-    values[i] = src.passConversionVeto();
+    // We want true = is matched to a conversion, so flip the logic
+    values[i] = !src.passConversionVeto();
   }
 
   edm::ValueMap<bool>::Filler filler(*product);
