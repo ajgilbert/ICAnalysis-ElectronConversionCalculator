@@ -6,6 +6,13 @@ icElectronConversionCalculator = cms.EDProducer('ICElectronConversionCalculator'
     conversions = cms.InputTag("allConversions")
 )
 
+icElectronConversionFromMiniAODCalculator = cms.EDProducer('ICElectronConversionFromMiniAODCalculator',
+    input       = cms.InputTag("slimmedElectrons"),
+    beamspot    = cms.InputTag("offlineBeamSpot"),
+    conversions = cms.InputTag("reducedEgamma:reducedConversions")
+)
+
+
 icElectronConversionFromPatCalculator = cms.EDProducer('ICElectronConversionFromPatCalculator',
     input       = cms.InputTag("patElectrons")
 )
